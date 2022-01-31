@@ -6,6 +6,9 @@ public class Main {
     static int factoriel = 1;
 
     static void getFactoriel(int facnumber) {
+        if (facnumber < 0) {
+            System.out.println("Hatalı Giriş Yaptınız!!");
+        }
         if (facnumber > 0) {
             factoriel = factoriel * facnumber;
             getFactoriel(facnumber - 1);
@@ -36,13 +39,9 @@ public class Main {
             case 1:
                 System.out.print("Faktöriyel Hesabı Yapılacak Sayıyı Giriniz = ");
                 int facnumber = scan.nextInt();
-                if (facnumber < 0) {
-                    System.out.println("Hatalı Giriş Yaptınız!!");
-                }
+
                 getFactoriel(facnumber);
                 System.out.println(facnumber + " sayısının faktöriyeli = " + factoriel);
-
-
                 break;
             case 2:
                 System.out.print("Palindrom Kontrol Edilecek Sayıyı Giriniz = ");
@@ -55,7 +54,6 @@ public class Main {
                     lastValue = lastValue * 10 + remainder;
                     palindrom = palindrom / 10;
                 }
-
                 if (lastValue == firstValue) {
                     System.out.println(lastValue + " Palindrom Sayıdır.");
                 } else {
